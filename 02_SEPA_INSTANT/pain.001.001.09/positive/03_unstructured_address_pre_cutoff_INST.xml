@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.09"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CstmrCdtTrfInitn>
+    <GrpHdr>
+      <MsgId>INST-PAIN-003</MsgId>
+      <CreDtTm>2026-09-11T12:00:00+03:00</CreDtTm>
+      <NbOfTxs>1</NbOfTxs>
+      <CtrlSum>101.00</CtrlSum>
+      <InitgPty><Nm>Baltic Parser Test Initiator</Nm></InitgPty>
+    </GrpHdr>
+
+    <PmtInf>
+      <PmtInfId>INST-PAIN-003-PMT-1</PmtInfId>
+      <PmtMtd>TRF</PmtMtd>
+      <BtchBookg>true</BtchBookg>
+      <NbOfTxs>1</NbOfTxs>
+      <CtrlSum>101.00</CtrlSum>
+      <PmtTpInf><SvcLvl><Cd>SEPA</Cd></SvcLvl><LclInstrm><Cd>INST</Cd></LclInstrm><CtgyPurp><Cd>SUPP</Cd></CtgyPurp></PmtTpInf>
+      <ReqdExctnDt><Dt>2026-09-12</Dt></ReqdExctnDt>
+      <Dbtr><Nm>Riga Trading SIA</Nm><PstlAdr><AdrLine>Test Street 10, Riga, LV</AdrLine></PstlAdr></Dbtr>
+      <DbtrAcct><Id><IBAN>LV80BANK0000435195001</IBAN></Id><Ccy>EUR</Ccy></DbtrAcct>
+      <DbtrAgt><FinInstnId><BICFI>RIKOLV2X</BICFI></FinInstnId></DbtrAgt>
+      <ChrgBr>SLEV</ChrgBr>
+
+      <CdtTrfTxInf>
+        <PmtId>
+          <InstrId>INSTR-001</InstrId>
+          <EndToEndId>E2E-001-1c03685c2cdb4959</EndToEndId>
+        </PmtId>
+
+        <Amt><InstdAmt Ccy="EUR">101.00</InstdAmt></Amt>
+        <ChrgBr>SLEV</ChrgBr>
+
+        <CdtrAgt><FinInstnId><BICFI>HABALV22</BICFI></FinInstnId></CdtrAgt>
+        <Cdtr><Nm>Baltic Supplier SIA</Nm><PstlAdr><AdrLine>Test Street 10, Riga, LV</AdrLine></PstlAdr></Cdtr>
+        <CdtrAcct><Id><IBAN>LV97HABA0012345678910</IBAN></Id></CdtrAcct>
+
+
+        <RmtInf><Ustrd>Invoice INV-001</Ustrd></RmtInf>
+      </CdtTrfTxInf>
+    </PmtInf>
+  </CstmrCdtTrfInitn>
+</Document>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
+  <FIToFICstmrCdtTrf>
+    <GrpHdr>
+      <MsgId>SCT-PACS-003</MsgId>
+      <CreDtTm>2026-09-11T12:00:00+03:00</CreDtTm>
+      <NbOfTxs>1</NbOfTxs>
+      <SttlmInf><SttlmMtd>CLRG</SttlmMtd></SttlmInf>
+      <InstgAgt><FinInstnId><BICFI>RIKOLV2X</BICFI></FinInstnId></InstgAgt>
+      <InstdAgt><FinInstnId><BICFI>HABALV22</BICFI></FinInstnId></InstdAgt>
+    </GrpHdr>
+
+    <CdtTrfTxInf>
+      <PmtId><InstrId>INSTR-001</InstrId><EndToEndId>E2E-PACS-001</EndToEndId><TxId>TX-001-6c06a77fca0e</TxId><UETR>1dfd5b02-1d29-4e83-b1bd-6e1c7711dde1</UETR></PmtId>
+      <PmtTpInf><SvcLvl><Cd>SEPA</Cd></SvcLvl><CtgyPurp><Cd>SUPP</Cd></CtgyPurp></PmtTpInf>
+      <IntrBkSttlmAmt Ccy="EUR">101.00</IntrBkSttlmAmt>
+      <ChrgBr>SLEV</ChrgBr>
+
+      <Dbtr><Nm>Riga Trading SIA</Nm><PstlAdr><AdrLine>Test Street 10, Riga, LV</AdrLine></PstlAdr></Dbtr>
+      <DbtrAcct><Id><IBAN>LV80BANK0000435195001</IBAN></Id></DbtrAcct>
+      <DbtrAgt><FinInstnId><BICFI>RIKOLV2X</BICFI></FinInstnId></DbtrAgt>
+      <CdtrAgt><FinInstnId><BICFI>HABALV22</BICFI></FinInstnId></CdtrAgt>
+      <Cdtr><Nm>Baltic Supplier SIA</Nm><PstlAdr><AdrLine>Test Street 10, Riga, LV</AdrLine></PstlAdr></Cdtr>
+      <CdtrAcct><Id><IBAN>LV97HABA0012345678910</IBAN></Id></CdtrAcct>
+
+
+      <RmtInf><Ustrd>Invoice PACS-001</Ustrd></RmtInf>
+    </CdtTrfTxInf>
+  </FIToFICstmrCdtTrf>
+</Document>

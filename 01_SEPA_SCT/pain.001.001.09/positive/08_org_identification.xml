@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.09"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CstmrCdtTrfInitn>
+    <GrpHdr>
+      <MsgId>SCT-PAIN-008</MsgId>
+      <CreDtTm>2026-09-11T12:00:00+03:00</CreDtTm>
+      <NbOfTxs>1</NbOfTxs>
+      <CtrlSum>101.00</CtrlSum>
+      <InitgPty><Nm>Baltic Parser Test Initiator</Nm></InitgPty>
+    </GrpHdr>
+
+    <PmtInf>
+      <PmtInfId>SCT-PAIN-008-PMT-1</PmtInfId>
+      <PmtMtd>TRF</PmtMtd>
+      <BtchBookg>true</BtchBookg>
+      <NbOfTxs>1</NbOfTxs>
+      <CtrlSum>101.00</CtrlSum>
+      <PmtTpInf><SvcLvl><Cd>SEPA</Cd></SvcLvl><CtgyPurp><Cd>SUPP</Cd></CtgyPurp></PmtTpInf>
+      <ReqdExctnDt><Dt>2026-09-12</Dt></ReqdExctnDt>
+      <Dbtr><Nm>Riga Trading SIA</Nm><PstlAdr>
+          <StrtNm>Test Street</StrtNm><BldgNb>10</BldgNb><PstCd>LV-1010</PstCd>
+          <TwnNm>Riga</TwnNm><Ctry>LV</Ctry>
+        </PstlAdr><Id><OrgId>
+          <LEI>529900T8BM49AURSDO55</LEI>
+          <Othr><Id>ORG-TEST-001</Id><SchmeNm><Prtry>CLIENTID</Prtry></SchmeNm><Issr>TEST</Issr></Othr>
+        </OrgId></Id></Dbtr>
+      <DbtrAcct><Id><IBAN>LV80BANK0000435195001</IBAN></Id><Ccy>EUR</Ccy></DbtrAcct>
+      <DbtrAgt><FinInstnId><BICFI>RIKOLV2X</BICFI></FinInstnId></DbtrAgt>
+      <ChrgBr>SLEV</ChrgBr>
+
+      <CdtTrfTxInf>
+        <PmtId>
+          <InstrId>INSTR-001</InstrId>
+          <EndToEndId>E2E-001-9d36dd965fb4400d</EndToEndId>
+        </PmtId>
+
+        <Amt><InstdAmt Ccy="EUR">101.00</InstdAmt></Amt>
+        <ChrgBr>SLEV</ChrgBr>
+
+        <CdtrAgt><FinInstnId><BICFI>HABALV22</BICFI></FinInstnId></CdtrAgt>
+        <Cdtr><Nm>Baltic Supplier SIA</Nm><PstlAdr>
+          <StrtNm>Test Street</StrtNm><BldgNb>10</BldgNb><PstCd>LV-1010</PstCd>
+          <TwnNm>Riga</TwnNm><Ctry>LV</Ctry>
+        </PstlAdr><Id><OrgId>
+          <LEI>529900T8BM49AURSDO55</LEI>
+          <Othr><Id>ORG-TEST-001</Id><SchmeNm><Prtry>CLIENTID</Prtry></SchmeNm><Issr>TEST</Issr></Othr>
+        </OrgId></Id></Cdtr>
+        <CdtrAcct><Id><IBAN>LV97HABA0012345678910</IBAN></Id></CdtrAcct>
+
+
+        <RmtInf><Ustrd>Invoice INV-001</Ustrd></RmtInf>
+      </CdtTrfTxInf>
+    </PmtInf>
+  </CstmrCdtTrfInitn>
+</Document>

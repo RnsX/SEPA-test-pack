@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
+  <FIToFICstmrCdtTrf>
+    <GrpHdr>
+      <MsgId>EKS-CURRENT-03</MsgId>
+      <CreDtTm>2026-09-11T12:00:00+03:00</CreDtTm>
+      <NbOfTxs>2</NbOfTxs>
+      <SttlmInf><SttlmMtd>CLRG</SttlmMtd></SttlmInf>
+      <InstgAgt><FinInstnId><BICFI>CBVILT2X</BICFI></FinInstnId></InstgAgt>
+      <InstdAgt><FinInstnId><BICFI>CBVILT2X</BICFI></FinInstnId></InstdAgt>
+    </GrpHdr>
+
+    <CdtTrfTxInf>
+      <PmtId><InstrId>INSTR-001</InstrId><EndToEndId>E2E-PACS-001</EndToEndId><TxId>TX-001-65fce8e2d8c3</TxId><UETR>3b3a3548-06f0-4192-bd97-8a900c59f70d</UETR></PmtId>
+      <PmtTpInf><SvcLvl><Cd>SEPA</Cd></SvcLvl><CtgyPurp><Cd>SUPP</Cd></CtgyPurp></PmtTpInf>
+      <IntrBkSttlmAmt Ccy="EUR">101.00</IntrBkSttlmAmt>
+      <ChrgBr>SLEV</ChrgBr>
+
+      <Dbtr><Nm>Vilnius Buyer UAB</Nm><PstlAdr>
+          <StrtNm>Test Street</StrtNm><BldgNb>10</BldgNb><PstCd>LV-1010</PstCd>
+          <TwnNm>Vilnius</TwnNm><Ctry>LT</Ctry>
+        </PstlAdr></Dbtr>
+      <DbtrAcct><Id><IBAN>LT121000011101001000</IBAN></Id></DbtrAcct>
+      <DbtrAgt><FinInstnId><BICFI>CBVILT2X</BICFI></FinInstnId></DbtrAgt>
+      <CdtrAgt><FinInstnId><BICFI>CBVILT2X</BICFI></FinInstnId></CdtrAgt>
+      <Cdtr><Nm>Lithuanian Supplier UAB</Nm><PstlAdr>
+          <StrtNm>Test Street</StrtNm><BldgNb>10</BldgNb><PstCd>LV-1010</PstCd>
+          <TwnNm>Vilnius</TwnNm><Ctry>LT</Ctry>
+        </PstlAdr></Cdtr>
+      <CdtrAcct><Id><IBAN>LT607044060001234567</IBAN></Id></CdtrAcct>
+
+
+      <RmtInf><Ustrd>Invoice PACS-001</Ustrd></RmtInf>
+    </CdtTrfTxInf>
+    <CdtTrfTxInf>
+      <PmtId><InstrId>INSTR-002</InstrId><EndToEndId>E2E-PACS-002</EndToEndId><TxId>TX-002-8aab4f63aaf7</TxId><UETR>72a5ab68-422c-432a-a373-b2541d3125be</UETR></PmtId>
+      <PmtTpInf><SvcLvl><Cd>SEPA</Cd></SvcLvl><CtgyPurp><Cd>SUPP</Cd></CtgyPurp></PmtTpInf>
+      <IntrBkSttlmAmt Ccy="EUR">102.00</IntrBkSttlmAmt>
+      <ChrgBr>SLEV</ChrgBr>
+
+      <Dbtr><Nm>Vilnius Buyer UAB</Nm><PstlAdr>
+          <StrtNm>Test Street</StrtNm><BldgNb>10</BldgNb><PstCd>LV-1010</PstCd>
+          <TwnNm>Vilnius</TwnNm><Ctry>LT</Ctry>
+        </PstlAdr></Dbtr>
+      <DbtrAcct><Id><IBAN>LT121000011101001000</IBAN></Id></DbtrAcct>
+      <DbtrAgt><FinInstnId><BICFI>CBVILT2X</BICFI></FinInstnId></DbtrAgt>
+      <CdtrAgt><FinInstnId><BICFI>CBVILT2X</BICFI></FinInstnId></CdtrAgt>
+      <Cdtr><Nm>Lithuanian Supplier UAB</Nm><PstlAdr>
+          <StrtNm>Test Street</StrtNm><BldgNb>10</BldgNb><PstCd>LV-1010</PstCd>
+          <TwnNm>Vilnius</TwnNm><Ctry>LT</Ctry>
+        </PstlAdr></Cdtr>
+      <CdtrAcct><Id><IBAN>LT607044060001234567</IBAN></Id></CdtrAcct>
+
+
+      <RmtInf><Ustrd>Invoice PACS-002</Ustrd></RmtInf>
+    </CdtTrfTxInf>
+  </FIToFICstmrCdtTrf>
+</Document>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.02">
+  <FIToFICstmrCdtTrf>
+    <GrpHdr>
+      <MsgId>EKS-LEGACY-001</MsgId><CreDtTm>2018-06-01T10:00:00</CreDtTm>
+      <NbOfTxs>1</NbOfTxs><SttlmInf><SttlmMtd>CLRG</SttlmMtd></SttlmInf>
+    </GrpHdr>
+    <CdtTrfTxInf>
+      <PmtId><InstrId>EKS-I-1</InstrId><EndToEndId>EKS-E2E-1</EndToEndId><TxId>EKS-TX-1</TxId></PmtId>
+      <PmtTpInf><SvcLvl><Cd>SEPA</Cd></SvcLvl></PmtTpInf>
+      <IntrBkSttlmAmt Ccy="EUR">50.00</IntrBkSttlmAmt><ChrgBr>SLEV</ChrgBr>
+      <Dbtr><Nm>Legacy Debtor SIA</Nm></Dbtr><DbtrAcct><Id><IBAN>LV80BANK0000435195001</IBAN></Id></DbtrAcct>
+      <DbtrAgt><FinInstnId><BIC>RIKOLV2X</BIC></FinInstnId></DbtrAgt>
+      <CdtrAgt><FinInstnId><BIC>HABALV22</BIC></FinInstnId></CdtrAgt>
+      <Cdtr><Nm>Legacy Creditor SIA</Nm></Cdtr><CdtrAcct><Id><IBAN>LV97HABA0012345678910</IBAN></Id></CdtrAcct>
+      <RmtInf><Ustrd>Legacy EKS parser fixture</Ustrd></RmtInf>
+    </CdtTrfTxInf>
+  </FIToFICstmrCdtTrf>
+</Document>

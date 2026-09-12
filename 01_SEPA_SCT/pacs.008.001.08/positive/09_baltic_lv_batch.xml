@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
+  <FIToFICstmrCdtTrf>
+    <GrpHdr>
+      <MsgId>SCT-PACS-009</MsgId>
+      <CreDtTm>2026-09-11T12:00:00+03:00</CreDtTm>
+      <NbOfTxs>3</NbOfTxs>
+      <SttlmInf><SttlmMtd>CLRG</SttlmMtd></SttlmInf>
+      <InstgAgt><FinInstnId><BICFI>RIKOLV2X</BICFI></FinInstnId></InstgAgt>
+      <InstdAgt><FinInstnId><BICFI>HABALV22</BICFI></FinInstnId></InstdAgt>
+    </GrpHdr>
+
+    <CdtTrfTxInf>
+      <PmtId><InstrId>INSTR-001</InstrId><EndToEndId>E2E-PACS-001</EndToEndId><TxId>TX-001-d6798a64bc1a</TxId><UETR>52102c99-aae6-4be3-b53d-893acbd4ed1e</UETR></PmtId>
+      <PmtTpInf><SvcLvl><Cd>SEPA</Cd></SvcLvl><CtgyPurp><Cd>SUPP</Cd></CtgyPurp></PmtTpInf>
+      <IntrBkSttlmAmt Ccy="EUR">101.00</IntrBkSttlmAmt>
+      <ChrgBr>SLEV</ChrgBr>
+
+      <Dbtr><Nm>Riga Trading SIA</Nm><PstlAdr>
+          <StrtNm>Test Street</StrtNm><BldgNb>10</BldgNb><PstCd>LV-1010</PstCd>
+          <TwnNm>Riga</TwnNm><Ctry>LV</Ctry>
+        </PstlAdr></Dbtr>
+      <DbtrAcct><Id><IBAN>LV80BANK0000435195001</IBAN></Id></DbtrAcct>
+      <DbtrAgt><FinInstnId><BICFI>RIKOLV2X</BICFI></FinInstnId></DbtrAgt>
+      <CdtrAgt><FinInstnId><BICFI>HABALV22</BICFI></FinInstnId></CdtrAgt>
+      <Cdtr><Nm>Baltic Supplier SIA</Nm><PstlAdr>
+          <StrtNm>Test Street</StrtNm><BldgNb>10</BldgNb><PstCd>LV-1010</PstCd>
+          <TwnNm>Riga</TwnNm><Ctry>LV</Ctry>
+        </PstlAdr></Cdtr>
+      <CdtrAcct><Id><IBAN>LV97HABA0012345678910</IBAN></Id></CdtrAcct>
+
+
+      <RmtInf><Ustrd>Invoice PACS-001</Ustrd></RmtInf>
+    </CdtTrfTxInf>
+    <CdtTrfTxInf>
+      <PmtId><InstrId>INSTR-002</InstrId><EndToEndId>E2E-PACS-002</EndToEndId><TxId>TX-002-7d1354adc291</TxId><UETR>0b25164d-8c82-4bac-8fae-694e167db24a</UETR></PmtId>
+      <PmtTpInf><SvcLvl><Cd>SEPA</Cd></SvcLvl><CtgyPurp><Cd>SUPP</Cd></CtgyPurp></PmtTpInf>
+      <IntrBkSttlmAmt Ccy="EUR">102.00</IntrBkSttlmAmt>
+      <ChrgBr>SLEV</ChrgBr>
+
+      <Dbtr><Nm>Riga Trading SIA</Nm><PstlAdr>
+          <StrtNm>Test Street</StrtNm><BldgNb>10</BldgNb><PstCd>LV-1010</PstCd>
+          <TwnNm>Riga</TwnNm><Ctry>LV</Ctry>
+        </PstlAdr></Dbtr>
+      <DbtrAcct><Id><IBAN>LV80BANK0000435195001</IBAN></Id></DbtrAcct>
+      <DbtrAgt><FinInstnId><BICFI>RIKOLV2X</BICFI></FinInstnId></DbtrAgt>
+      <CdtrAgt><FinInstnId><BICFI>HABALV22</BICFI></FinInstnId></CdtrAgt>
+      <Cdtr><Nm>Baltic Supplier SIA</Nm><PstlAdr>
+          <StrtNm>Test Street</StrtNm><BldgNb>10</BldgNb><PstCd>LV-1010</PstCd>
+          <TwnNm>Riga</TwnNm><Ctry>LV</Ctry>
+        </PstlAdr></Cdtr>
+      <CdtrAcct><Id><IBAN>LV97HABA0012345678910</IBAN></Id></CdtrAcct>
+
+
+      <RmtInf><Ustrd>Invoice PACS-002</Ustrd></RmtInf>
+    </CdtTrfTxInf>
+    <CdtTrfTxInf>
+      <PmtId><InstrId>INSTR-003</InstrId><EndToEndId>E2E-PACS-003</EndToEndId><TxId>TX-003-964b67ec5be5</TxId><UETR>49d82cf9-5e98-4da6-b018-c5f65bedacca</UETR></PmtId>
+      <PmtTpInf><SvcLvl><Cd>SEPA</Cd></SvcLvl><CtgyPurp><Cd>SUPP</Cd></CtgyPurp></PmtTpInf>
+      <IntrBkSttlmAmt Ccy="EUR">103.00</IntrBkSttlmAmt>
+      <ChrgBr>SLEV</ChrgBr>
+
+      <Dbtr><Nm>Riga Trading SIA</Nm><PstlAdr>
+          <StrtNm>Test Street</StrtNm><BldgNb>10</BldgNb><PstCd>LV-1010</PstCd>
+          <TwnNm>Riga</TwnNm><Ctry>LV</Ctry>
+        </PstlAdr></Dbtr>
+      <DbtrAcct><Id><IBAN>LV80BANK0000435195001</IBAN></Id></DbtrAcct>
+      <DbtrAgt><FinInstnId><BICFI>RIKOLV2X</BICFI></FinInstnId></DbtrAgt>
+      <CdtrAgt><FinInstnId><BICFI>HABALV22</BICFI></FinInstnId></CdtrAgt>
+      <Cdtr><Nm>Baltic Supplier SIA</Nm><PstlAdr>
+          <StrtNm>Test Street</StrtNm><BldgNb>10</BldgNb><PstCd>LV-1010</PstCd>
+          <TwnNm>Riga</TwnNm><Ctry>LV</Ctry>
+        </PstlAdr></Cdtr>
+      <CdtrAcct><Id><IBAN>LV97HABA0012345678910</IBAN></Id></CdtrAcct>
+
+
+      <RmtInf><Ustrd>Invoice PACS-003</Ustrd></RmtInf>
+    </CdtTrfTxInf>
+  </FIToFICstmrCdtTrf>
+</Document>
