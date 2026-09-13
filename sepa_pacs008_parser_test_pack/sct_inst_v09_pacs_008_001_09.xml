@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.09">
+  <FIToFICstmrCdtTrf>
+    <GrpHdr>
+      <MsgId>SCI20260913V09D</MsgId>
+      <CreDtTm>2026-09-13T07:08:12.789Z</CreDtTm>
+      <BtchBookg>false</BtchBookg>
+      <NbOfTxs>1</NbOfTxs>
+      <CtrlSum>50000.00</CtrlSum>
+      <TtlIntrBkSttlmAmt Ccy="EUR">50000.00</TtlIntrBkSttlmAmt>
+      <IntrBkSttlmDt>2026-09-13</IntrBkSttlmDt>
+      <SttlmInf>
+        <SttlmMtd>CLRG</SttlmMtd>
+        <ClrSys>
+          <Prtry>SEPA</Prtry>
+        </ClrSys>
+      </SttlmInf>
+      <PmtTpInf>
+        <SvcLvl>
+          <Cd>SEPA</Cd>
+        </SvcLvl>
+        <LclInstrm>
+          <Cd>INST</Cd>
+        </LclInstrm>
+        <CtgyPurp>
+          <Cd>TRAD</Cd>
+        </CtgyPurp>
+      </PmtTpInf>
+      <InstgAgt>
+        <FinInstnId>
+          <BICFI>BNPAFRPPXXX</BICFI>
+        </FinInstnId>
+      </InstgAgt>
+      <InstdAgt>
+        <FinInstnId>
+          <BICFI>DEUTDEFFXXX</BICFI>
+        </FinInstnId>
+      </InstdAgt>
+    </GrpHdr>
+    <CdtTrfTxInf>
+      <PmtId>
+        <InstrId>INSTR-SCI-09-001</InstrId>
+        <EndToEndId>E2E-SCI-09-001</EndToEndId>
+        <TxId>TX-SCI-09-001</TxId>
+        <UETR>423e4567-e89b-42d3-a456-426614174003</UETR>
+      </PmtId>
+      <PmtTpInf>
+        <SvcLvl>
+          <Cd>SEPA</Cd>
+        </SvcLvl>
+        <LclInstrm>
+          <Cd>INST</Cd>
+        </LclInstrm>
+        <CtgyPurp>
+          <Cd>TRAD</Cd>
+        </CtgyPurp>
+      </PmtTpInf>
+      <IntrBkSttlmAmt Ccy="EUR">50000.00</IntrBkSttlmAmt>
+      <IntrBkSttlmDt>2026-09-13</IntrBkSttlmDt>
+      <AccptncDtTm>2026-09-13T04:08:12.987Z</AccptncDtTm>
+      <ChrgBr>SLEV</ChrgBr>
+      <UltmtDbtr>
+        <Nm>Example Services SAS</Nm>
+        <PstlAdr>
+          <Dept>Receivables</Dept>
+          <StrtNm>Rue de Rivoli</StrtNm>
+          <BldgNb>10</BldgNb>
+          <PstCd>75001</PstCd>
+          <TwnNm>Paris</TwnNm>
+          <CtrySubDvsn>Ile-de-France</CtrySubDvsn>
+          <Ctry>FR</Ctry>
+        </PstlAdr>
+        <Id>
+          <OrgId>
+            <AnyBIC>BNPAFRPPXXX</AnyBIC>
+            <LEI>969500Q2MA9VBQ8BG884</LEI>
+          </OrgId>
+        </Id>
+        <CtryOfRes>FR</CtryOfRes>
+        <CtctDtls>
+          <Nm>Marc Martin</Nm>
+          <PhneNb>+33-140000000</PhneNb>
+          <EmailAdr>ar@example.test</EmailAdr>
+          <Dept>Accounts Receivable</Dept>
+        </CtctDtls>
+      </UltmtDbtr>
+      <InitgPty>
+        <Nm>Jan de Vries</Nm>
+        <PstlAdr>
+          <StrtNm>Damrak</StrtNm>
+          <BldgNb>1</BldgNb>
+          <PstCd>1012LG</PstCd>
+          <TwnNm>Amsterdam</TwnNm>
+          <Ctry>NL</Ctry>
+        </PstlAdr>
+        <Id>
+          <PrvtId>
+            <Othr>
+              <Id>NL-PERS-123456789</Id>
+              <SchmeNm>
+                <Prtry>NIDN</Prtry>
+              </SchmeNm>
+              <Issr>NL</Issr>
+            </Othr>
+          </PrvtId>
+        </Id>
+        <CtryOfRes>NL</CtryOfRes>
+        <CtctDtls>
+          <Nm>Jan de Vries</Nm>
+          <MobNb>+31-612345678</MobNb>
+          <EmailAdr>jan@example.test</EmailAdr>
+        </CtctDtls>
+      </InitgPty>
+      <Dbtr>
+        <Nm>Jan de Vries</Nm>
+        <PstlAdr>
+          <StrtNm>Damrak</StrtNm>
+          <BldgNb>1</BldgNb>
+          <PstCd>1012LG</PstCd>
+          <TwnNm>Amsterdam</TwnNm>
+          <Ctry>NL</Ctry>
+        </PstlAdr>
+        <Id>
+          <PrvtId>
+            <Othr>
+              <Id>NL-PERS-123456789</Id>
+              <SchmeNm>
+                <Prtry>NIDN</Prtry>
+              </SchmeNm>
+              <Issr>NL</Issr>
+            </Othr>
+          </PrvtId>
+        </Id>
+        <CtryOfRes>NL</CtryOfRes>
+        <CtctDtls>
+          <Nm>Jan de Vries</Nm>
+          <MobNb>+31-612345678</MobNb>
+          <EmailAdr>jan@example.test</EmailAdr>
+        </CtctDtls>
+      </Dbtr>
+      <DbtrAcct>
+        <Id>
+          <IBAN>FR7630006000011234567890189</IBAN>
+        </Id>
+        <Ccy>EUR</Ccy>
+        <Nm>Realtime EUR</Nm>
+        <Prxy>
+          <Tp>
+            <Cd>EMAL</Cd>
+          </Tp>
+          <Id>payer@example.test</Id>
+        </Prxy>
+      </DbtrAcct>
+      <DbtrAgt>
+        <FinInstnId>
+          <BICFI>BNPAFRPPXXX</BICFI>
+        </FinInstnId>
+      </DbtrAgt>
+      <CdtrAgt>
+        <FinInstnId>
+          <BICFI>DEUTDEFFXXX</BICFI>
+        </FinInstnId>
+      </CdtrAgt>
+      <Cdtr>
+        <Nm>Elina Berzina</Nm>
+        <PstlAdr>
+          <Ctry>LV</Ctry>
+          <AdrLine>Kalku iela 1, dz. 7</AdrLine>
+          <AdrLine>Riga LV-1050</AdrLine>
+        </PstlAdr>
+        <Id>
+          <PrvtId>
+            <DtAndPlcOfBirth>
+              <BirthDt>1988-02-29</BirthDt>
+              <PrvcOfBirth>Riga</PrvcOfBirth>
+              <CityOfBirth>Riga</CityOfBirth>
+              <CtryOfBirth>LV</CtryOfBirth>
+            </DtAndPlcOfBirth>
+          </PrvtId>
+        </Id>
+        <CtryOfRes>LV</CtryOfRes>
+        <CtctDtls>
+          <Nm>Elina Berzina</Nm>
+          <MobNb>+371-20000000</MobNb>
+          <EmailAdr>elina@example.test</EmailAdr>
+        </CtctDtls>
+      </Cdtr>
+      <CdtrAcct>
+        <Id>
+          <IBAN>DE89370400440532013000</IBAN>
+        </Id>
+        <Ccy>EUR</Ccy>
+        <Nm>Vendor EUR</Nm>
+        <Prxy>
+          <Tp>
+            <Cd>MBNO</Cd>
+          </Tp>
+          <Id>+37120000000</Id>
+        </Prxy>
+      </CdtrAcct>
+      <UltmtCdtr>
+        <Nm>Baltic Manufacturing SIA</Nm>
+        <PstlAdr>
+          <Dept>Treasury</Dept>
+          <SubDept>AP</SubDept>
+          <StrtNm>Brivibas iela</StrtNm>
+          <BldgNb>100</BldgNb>
+          <BldgNm>North Wing</BldgNm>
+          <Flr>4</Flr>
+          <Room>401</Room>
+          <PstCd>LV-1012</PstCd>
+          <TwnNm>Riga</TwnNm>
+          <DstrctNm>Centrs</DstrctNm>
+          <CtrySubDvsn>Riga</CtrySubDvsn>
+          <Ctry>LV</Ctry>
+        </PstlAdr>
+        <Id>
+          <OrgId>
+            <LEI>5493001KJTIIGC8Y1R12</LEI>
+            <Othr>
+              <Id>LV-REG-40003000001</Id>
+              <SchmeNm>
+                <Prtry>COID</Prtry>
+              </SchmeNm>
+              <Issr>LV-UR</Issr>
+            </Othr>
+          </OrgId>
+        </Id>
+        <CtryOfRes>LV</CtryOfRes>
+        <CtctDtls>
+          <Nm>Anna Ozola</Nm>
+          <PhneNb>+371-67000000</PhneNb>
+          <EmailAdr>ap@example.test</EmailAdr>
+          <JobTitl>Treasury Manager</JobTitl>
+          <Dept>Finance</Dept>
+          <Othr>
+            <ChanlTp>WEB</ChanlTp>
+            <Id>https://example.test/ap</Id>
+          </Othr>
+        </CtctDtls>
+      </UltmtCdtr>
+      <Purp>
+        <Cd>TRAD</Cd>
+      </Purp>
+      <RmtInf>
+        <Ustrd>Instant V09 compatibility fixture; repeated address line tags</Ustrd>
+      </RmtInf>
+    </CdtTrfTxInf>
+  </FIToFICstmrCdtTrf>
+</Document>
