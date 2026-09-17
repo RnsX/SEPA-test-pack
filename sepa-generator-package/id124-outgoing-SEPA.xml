@@ -31,6 +31,36 @@
       <IntrBkSttlmDt>2026-09-17</IntrBkSttlmDt>
       <AccptncDtTm>2026-09-17T08:46:00.123+03:00</AccptncDtTm>
       <ChrgBr>SLEV</ChrgBr>
+      <PrvsInstgAgt1>
+        <FinInstnId>
+          <BICFI>PONELV2X</BICFI>
+        </FinInstnId>
+      </PrvsInstgAgt1>
+      <PrvsInstgAgt1Acct>
+        <Id>
+          <IBAN>LV80BANK0000435195101</IBAN>
+        </Id>
+      </PrvsInstgAgt1Acct>
+      <PrvsInstgAgt2>
+        <FinInstnId>
+          <BICFI>PTWOLV2X</BICFI>
+        </FinInstnId>
+      </PrvsInstgAgt2>
+      <PrvsInstgAgt2Acct>
+        <Id>
+          <IBAN>LV80BANK0000435195102</IBAN>
+        </Id>
+      </PrvsInstgAgt2Acct>
+      <PrvsInstgAgt3>
+        <FinInstnId>
+          <BICFI>PTHRLV2X</BICFI>
+        </FinInstnId>
+      </PrvsInstgAgt3>
+      <PrvsInstgAgt3Acct>
+        <Id>
+          <IBAN>LV80BANK0000435195103</IBAN>
+        </Id>
+      </PrvsInstgAgt3Acct>
       <InstgAgt>
         <FinInstnId>
           <BICFI>AAAALV2X</BICFI>
@@ -41,6 +71,36 @@
           <BICFI>BBBBDEFF</BICFI>
         </FinInstnId>
       </InstdAgt>
+      <IntrmyAgt1>
+        <FinInstnId>
+          <BICFI>IONELV2X</BICFI>
+        </FinInstnId>
+      </IntrmyAgt1>
+      <IntrmyAgt1Acct>
+        <Id>
+          <IBAN>LV80BANK0000435195201</IBAN>
+        </Id>
+      </IntrmyAgt1Acct>
+      <IntrmyAgt2>
+        <FinInstnId>
+          <BICFI>ITWOLV2X</BICFI>
+        </FinInstnId>
+      </IntrmyAgt2>
+      <IntrmyAgt2Acct>
+        <Id>
+          <IBAN>LV80BANK0000435195202</IBAN>
+        </Id>
+      </IntrmyAgt2Acct>
+      <IntrmyAgt3>
+        <FinInstnId>
+          <BICFI>ITHRLV2X</BICFI>
+        </FinInstnId>
+      </IntrmyAgt3>
+      <IntrmyAgt3Acct>
+        <Id>
+          <IBAN>LV80BANK0000435195203</IBAN>
+        </Id>
+      </IntrmyAgt3Acct>
       <Dbtr>
         <Nm>Example Originator SIA</Nm>
         <PstlAdr>
@@ -72,11 +132,21 @@
           <BICFI>AAAALV2X</BICFI>
         </FinInstnId>
       </DbtrAgt>
+      <DbtrAgtAcct>
+        <Id>
+          <IBAN>LV80BANK0000435195301</IBAN>
+        </Id>
+      </DbtrAgtAcct>
       <CdtrAgt>
         <FinInstnId>
           <BICFI>BBBBDEFF</BICFI>
         </FinInstnId>
       </CdtrAgt>
+      <CdtrAgtAcct>
+        <Id>
+          <IBAN>DE89370400440532013001</IBAN>
+        </Id>
+      </CdtrAgtAcct>
       <Cdtr>
         <Nm>Instant Beneficiary SAS</Nm>
         <PstlAdr>

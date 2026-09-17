@@ -12,7 +12,10 @@
 // Output filename = <metadata id>-<metadata direction>-<metadata scheme>.xml
 // and is always written to the directory containing this script.
 //
-// The CSV intentionally also contains EPC inquiry / R-transaction / confirmation
+// The CSV includes all pacs.008 payment-chain agent roles (Previous Instructing
+// Agents 1-3, Instructing/Instructed, Intermediary Agents 1-3, Debtor/Creditor
+// Agents and their applicable agent accounts). It also contains EPC inquiry /
+// R-transaction / confirmation
 // attributes. Those belong to other ISO 20022 messages (pacs.002, pacs.004,
 // camt.056, camt.029, etc.) and are not inserted into the initial pacs.008.
 
@@ -283,6 +286,26 @@ function addAccount(lines, level, tagName, iban, proxy) {
   add(lines, level, `</${tagName}>`);
 }
 
+// Agent accounts use CashAccount38. The CSV supports either an IBAN or an
+// ISO Other/Id value for each agent account; do not populate both on one row.
+function addAgentAccount(lines, level, tagName, iban, otherId) {
+  const cleanIban = String(iban ?? '').replace(/\s+/g, '').toUpperCase();
+  const other = String(otherId ?? '').trim();
+  if (!cleanIban && !other) return;
+
+  add(lines, level, `<${tagName}>`);
+  add(lines, level + 1, '<Id>');
+  if (cleanIban) {
+    addText(lines, level + 2, 'IBAN', cleanIban);
+  } else {
+    add(lines, level + 2, '<Othr>');
+    addText(lines, level + 3, 'Id', other);
+    add(lines, level + 2, '</Othr>');
+  }
+  add(lines, level + 1, '</Id>');
+  add(lines, level, `</${tagName}>`);
+}
+
 function addCodeOrProprietary(lines, level, wrapperTag, input) {
   const v = String(input ?? '').trim();
   if (!v) return;
@@ -380,13 +403,38 @@ function validateRow(row) {
     if (value(row, key) && !isIban(value(row, key))) errors.push(`${key} is not in IBAN format`);
   }
 
-  for (const key of [
-    'AT-D002 BIC of Originator PSP',
-    'AT-C002 BIC of Beneficiary PSP',
+  const agentBicKeys = [
+    'previous instructing agent 1 BIC',
+    'previous instructing agent 2 BIC',
+    'previous instructing agent 3 BIC',
     'instructing agent BIC',
-    'instructed agent BIC'
-  ]) {
+    'instructed agent BIC',
+    'intermediary agent 1 BIC',
+    'intermediary agent 2 BIC',
+    'intermediary agent 3 BIC',
+    'AT-D002 BIC of Originator PSP',
+    'AT-C002 BIC of Beneficiary PSP'
+  ];
+  for (const key of agentBicKeys) {
     if (value(row, key) && !isBic(value(row, key).toUpperCase())) errors.push(`${key} is not in BIC format`);
+  }
+
+  const agentAccounts = [
+    ['previous instructing agent 1 account IBAN', 'previous instructing agent 1 account other id', 'previous instructing agent 1 BIC'],
+    ['previous instructing agent 2 account IBAN', 'previous instructing agent 2 account other id', 'previous instructing agent 2 BIC'],
+    ['previous instructing agent 3 account IBAN', 'previous instructing agent 3 account other id', 'previous instructing agent 3 BIC'],
+    ['intermediary agent 1 account IBAN', 'intermediary agent 1 account other id', 'intermediary agent 1 BIC'],
+    ['intermediary agent 2 account IBAN', 'intermediary agent 2 account other id', 'intermediary agent 2 BIC'],
+    ['intermediary agent 3 account IBAN', 'intermediary agent 3 account other id', 'intermediary agent 3 BIC'],
+    ['debtor agent account IBAN', 'debtor agent account other id', 'AT-D002 BIC of Originator PSP'],
+    ['creditor agent account IBAN', 'creditor agent account other id', 'AT-C002 BIC of Beneficiary PSP']
+  ];
+  for (const [ibanKey, otherKey, agentKey] of agentAccounts) {
+    const iban = value(row, ibanKey);
+    const other = value(row, otherKey);
+    if (iban && other) errors.push(`${ibanKey} and ${otherKey} are mutually exclusive`);
+    if (iban && !isIban(iban)) errors.push(`${ibanKey} is not in IBAN format`);
+    if ((iban || other) && !value(row, agentKey)) errors.push(`${agentKey} is required when an associated agent account is populated`);
   }
 
   return errors;
@@ -441,8 +489,23 @@ function buildPacs008(row) {
   if (isInstant) addText(lines, 3, 'AccptncDtTm', value(row, 'AT-T056 SCT Inst timestamp'));
   addText(lines, 3, 'ChrgBr', 'SLEV');
 
+  // Optional payment-chain agents in ISO 20022 pacs.008 sequence.
+  addFinInst(lines, 3, 'PrvsInstgAgt1', value(row, 'previous instructing agent 1 BIC'));
+  addAgentAccount(lines, 3, 'PrvsInstgAgt1Acct', value(row, 'previous instructing agent 1 account IBAN'), value(row, 'previous instructing agent 1 account other id'));
+  addFinInst(lines, 3, 'PrvsInstgAgt2', value(row, 'previous instructing agent 2 BIC'));
+  addAgentAccount(lines, 3, 'PrvsInstgAgt2Acct', value(row, 'previous instructing agent 2 account IBAN'), value(row, 'previous instructing agent 2 account other id'));
+  addFinInst(lines, 3, 'PrvsInstgAgt3', value(row, 'previous instructing agent 3 BIC'));
+  addAgentAccount(lines, 3, 'PrvsInstgAgt3Acct', value(row, 'previous instructing agent 3 account IBAN'), value(row, 'previous instructing agent 3 account other id'));
+
   addFinInst(lines, 3, 'InstgAgt', value(row, 'instructing agent BIC'));
   addFinInst(lines, 3, 'InstdAgt', value(row, 'instructed agent BIC'));
+
+  addFinInst(lines, 3, 'IntrmyAgt1', value(row, 'intermediary agent 1 BIC'));
+  addAgentAccount(lines, 3, 'IntrmyAgt1Acct', value(row, 'intermediary agent 1 account IBAN'), value(row, 'intermediary agent 1 account other id'));
+  addFinInst(lines, 3, 'IntrmyAgt2', value(row, 'intermediary agent 2 BIC'));
+  addAgentAccount(lines, 3, 'IntrmyAgt2Acct', value(row, 'intermediary agent 2 account IBAN'), value(row, 'intermediary agent 2 account other id'));
+  addFinInst(lines, 3, 'IntrmyAgt3', value(row, 'intermediary agent 3 BIC'));
+  addAgentAccount(lines, 3, 'IntrmyAgt3Acct', value(row, 'intermediary agent 3 account IBAN'), value(row, 'intermediary agent 3 account other id'));
 
   addParty(lines, 3, 'UltmtDbtr', value(row, 'AT-P006 name of Originator Reference Party'), row, {
     idColumn: 'AT-P007 identification code of Originator Reference Party',
@@ -466,7 +529,9 @@ function buildPacs008(row) {
     value(row, 'AT-P003 proxy alias of Originator account')
   );
   addFinInst(lines, 3, 'DbtrAgt', value(row, 'AT-D002 BIC of Originator PSP'));
+  addAgentAccount(lines, 3, 'DbtrAgtAcct', value(row, 'debtor agent account IBAN'), value(row, 'debtor agent account other id'));
   addFinInst(lines, 3, 'CdtrAgt', value(row, 'AT-C002 BIC of Beneficiary PSP'));
+  addAgentAccount(lines, 3, 'CdtrAgtAcct', value(row, 'creditor agent account IBAN'), value(row, 'creditor agent account other id'));
 
   addParty(lines, 3, 'Cdtr', value(row, 'AT-E001 name of Beneficiary'), row, {
     idColumn: 'AT-E005 Beneficiary identification code',
