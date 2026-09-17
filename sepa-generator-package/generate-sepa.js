@@ -73,7 +73,17 @@ function parseCsv(text) {
 
   if (rows.length === 0) return [];
 
-  const headers = rows.shift().map((h, index) => {
+  // Supports either:
+  //   row 1 = machine-readable headers (legacy format), or
+  //   row 1 = user-friendly labels, row 2 = ISO/XML paths, row 3 = machine-readable headers.
+  let headerRowIndex = 0;
+  const firstCell = String(rows[0]?.[0] ?? '').replace(/^\uFEFF/, '').trim();
+  const thirdRowFirstCell = String(rows[2]?.[0] ?? '').replace(/^\uFEFF/, '').trim();
+  if (firstCell !== 'metadata id' && thirdRowFirstCell === 'metadata id') {
+    headerRowIndex = 2;
+  }
+
+  const headers = rows[headerRowIndex].map((h, index) => {
     const value = index === 0 ? h.replace(/^\uFEFF/, '') : h;
     return value.trim();
   });
@@ -83,10 +93,12 @@ function parseCsv(text) {
     throw new Error(`CSV contains duplicate headers: ${[...new Set(duplicates)].join(', ')}`);
   }
 
-  return rows
+  const dataRows = rows.slice(headerRowIndex + 1);
+
+  return dataRows
     .filter((cells) => cells.some((cell) => String(cell).trim() !== ''))
     .map((cells, rowIndex) => {
-      const obj = { __rowNumber: rowIndex + 2 };
+      const obj = { __rowNumber: rowIndex + headerRowIndex + 2 };
       for (let i = 0; i < headers.length; i += 1) {
         obj[headers[i]] = cells[i] === undefined ? '' : cells[i];
       }
