@@ -4,7 +4,7 @@
 // Uses only Node.js built-ins (fs, path).
 //
 // Deliberately NOT a complete SEPA/pacs.008 payment message:
-// - no scheme/payment type
+// - transaction id / type / direction are filename-only metadata and are never written to XML
 // - no group header / message metadata
 // - no instruction/UETR/transaction/status identifiers
 // - no settlement metadata / charge bearer / lifecycle data
@@ -15,7 +15,8 @@
 //   row 3 = machine-readable field names used by this script
 //   row 4+ = data
 //
-// Output: payment-001.xml, payment-002.xml, ... in the script directory.
+// Output filename: <transaction id>-<direction>-<type>.xml in the script directory.
+// Example: id123-outgoing-SEPA.xml
 
 const fs = require('fs');
 const path = require('path');
@@ -267,8 +268,12 @@ function main() {
   const rows = parseCsv(fs.readFileSync(csvPath, 'utf8'));
   if (!rows.length) throw new Error('CSV has no data rows.');
 
-  rows.forEach((row, idx) => {
-    const fileName = `payment-${String(idx + 1).padStart(3, '0')}.xml`;
+  rows.forEach((row) => {
+    // These three CSV values are non-XML metadata. They are used only for the output filename.
+    const transactionId = value(row, 'transaction id');
+    const type = value(row, 'type');
+    const direction = value(row, 'direction');
+    const fileName = `${transactionId}-${direction}-${type}.xml`;
     fs.writeFileSync(path.join(SCRIPT_DIR, fileName), buildFragment(row), 'utf8');
     console.log(`Generated ${fileName}`);
   });

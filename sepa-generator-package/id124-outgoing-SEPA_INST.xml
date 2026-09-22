@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CdtTrfTxInf xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
-  <IntrBkSttlmAmt Ccy="EUR">125.50</IntrBkSttlmAmt>
+  <IntrBkSttlmAmt Ccy="EUR">42.00</IntrBkSttlmAmt>
   <PrvsInstgAgt1>
     <FinInstnId>
       <BICFI>PONELV2X</BICFI>
@@ -74,21 +74,12 @@
   <UltmtDbtr>
     <Nm>Example Parent Group SIA</Nm>
     <PstlAdr>
-      <StrtNm>Elizabetes iela</StrtNm>
-      <BldgNb>10</BldgNb>
-      <PstCd>LV-1010</PstCd>
       <TwnNm>Riga</TwnNm>
       <Ctry>LV</Ctry>
-      <AdrLine>Elizabetes iela 10</AdrLine>
     </PstlAdr>
     <Id>
       <OrgId>
-        <Othr>
-          <Id>LV-ULT-11111</Id>
-          <SchmeNm>
-            <Prtry>CUST</Prtry>
-          </SchmeNm>
-        </Othr>
+        <LEI>5493001KJTIIGC8Y1R12</LEI>
       </OrgId>
     </Id>
     <CtryOfRes>LV</CtryOfRes>
@@ -141,58 +132,64 @@
     </Id>
   </CdtrAgtAcct>
   <Cdtr>
-    <Nm>Example Beneficiary GmbH</Nm>
+    <Nm>Instant Beneficiary SAS</Nm>
     <PstlAdr>
-      <StrtNm>Musterstrasse</StrtNm>
-      <BldgNb>10</BldgNb>
-      <PstCd>10115</PstCd>
-      <TwnNm>Berlin</TwnNm>
-      <Ctry>DE</Ctry>
-      <AdrLine>Musterstrasse 10</AdrLine>
+      <StrtNm>Rue Exemple</StrtNm>
+      <BldgNb>20</BldgNb>
+      <PstCd>75001</PstCd>
+      <TwnNm>Paris</TwnNm>
+      <Ctry>FR</Ctry>
+      <AdrLine>Rue Exemple 20</AdrLine>
     </PstlAdr>
     <Id>
       <OrgId>
         <Othr>
-          <Id>DE-ORG-98765</Id>
+          <Id>FR-ORG-54321</Id>
           <SchmeNm>
             <Prtry>CUST</Prtry>
           </SchmeNm>
         </Othr>
       </OrgId>
     </Id>
-    <CtryOfRes>DE</CtryOfRes>
+    <CtryOfRes>FR</CtryOfRes>
   </Cdtr>
   <CdtrAcct>
     <Id>
-      <IBAN>DE89370400440532013000</IBAN>
+      <IBAN>FR1420041010050500013M02606</IBAN>
     </Id>
   </CdtrAcct>
   <UltmtCdtr>
-    <Nm>Example Beneficiary Holding GmbH</Nm>
+    <Nm>Example Ultimate Beneficiary SAS</Nm>
     <PstlAdr>
-      <StrtNm>Holdingstrasse</StrtNm>
-      <BldgNb>5</BldgNb>
-      <PstCd>10117</PstCd>
-      <TwnNm>Berlin</TwnNm>
-      <Ctry>DE</Ctry>
-      <AdrLine>Holdingstrasse 5</AdrLine>
+      <TwnNm>Paris</TwnNm>
+      <Ctry>FR</Ctry>
     </PstlAdr>
     <Id>
       <OrgId>
         <Othr>
-          <Id>DE-ULT-22222</Id>
+          <Id>FR-ULT-33333</Id>
           <SchmeNm>
             <Prtry>CUST</Prtry>
           </SchmeNm>
         </Othr>
       </OrgId>
     </Id>
-    <CtryOfRes>DE</CtryOfRes>
+    <CtryOfRes>FR</CtryOfRes>
   </UltmtCdtr>
   <Purp>
     <Cd>SUPP</Cd>
   </Purp>
   <RmtInf>
-    <Ustrd>Invoice 2026-00123</Ustrd>
+    <Strd>
+      <CdtrRefInf>
+        <Tp>
+          <CdOrPrtry>
+            <Cd>SCOR</Cd>
+          </CdOrPrtry>
+          <Issr>ISO</Issr>
+        </Tp>
+        <Ref>RF18539007547034</Ref>
+      </CdtrRefInf>
+    </Strd>
   </RmtInf>
 </CdtTrfTxInf>
